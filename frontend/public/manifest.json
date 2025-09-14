@@ -1,0 +1,75 @@
+{
+  "short_name": "MitraVerify",
+  "name": "MitraVerify - AI-Powered Misinformation Detection",
+  "description": "Verify news, images, and social media content instantly with AI-powered fact-checking technology designed for Indian users.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-IN",
+  "categories": ["education", "news", "utilities"],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Verify Content",
+      "short_name": "Verify",
+      "description": "Quickly verify text or image content",
+      "url": "/verify",
+      "icons": [{ "src": "icon-verify.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Education Hub",
+      "short_name": "Learn",
+      "description": "Access digital literacy education",
+      "url": "/education",
+      "icons": [{ "src": "icon-education.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "My Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your verification history and progress",
+      "url": "/dashboard",
+      "icons": [{ "src": "icon-dashboard.png", "sizes": "96x96" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.mitraverify.app",
+      "id": "com.mitraverify.app"
+    }
+  ]
+}

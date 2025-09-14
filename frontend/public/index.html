@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1976d2" />
+    <meta
+      name="description"
+      content="MitraVerify - AI-powered misinformation detection and education platform for Indian users. Verify news, images, and social media content instantly."
+    />
+    <meta name="keywords" content="fact-check, misinformation, AI, verification, news, India, fake news, social media, education" />
+    <meta name="author" content="MitraVerify Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mitraverify.vercel.app/" />
+    <meta property="og:title" content="MitraVerify - AI-Powered Misinformation Detection" />
+    <meta property="og:description" content="Verify news, images, and social media content instantly with AI-powered fact-checking technology." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mitraverify.vercel.app/" />
+    <meta property="twitter:title" content="MitraVerify - AI-Powered Misinformation Detection" />
+    <meta property="twitter:description" content="Verify news, images, and social media content instantly with AI-powered fact-checking technology." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+
+    <!-- PWA Configuration -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MitraVerify",
+      "description": "AI-powered misinformation detection and education platform",
+      "url": "https://mitraverify.vercel.app",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "MitraVerify Team"
+      }
+    }
+    </script>
+
+    <title>MitraVerify - AI-Powered Misinformation Detection</title>
+    
+    <!-- Custom CSS Variables -->
+    <style>
+      :root {
+        --primary-color: #1976d2;
+        --secondary-color: #dc004e;
+        --success-color: #2e7d32;
+        --warning-color: #ed6c02;
+        --error-color: #d32f2f;
+        --info-color: #0288d1;
+        --background-color: #fafafa;
+        --surface-color: #ffffff;
+        --text-primary: #212121;
+        --text-secondary: #757575;
+        --border-color: #e0e0e0;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+      
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+      }
+      
+      /* Loading spinner for initial load */
+      #root {
+        min-height: 100vh;
+      }
+      
+      .initial-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+        color: white;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      /* Accessibility improvements */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      
+      /* Focus styles */
+      *:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+      }
+      
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      
+      /* Print styles */
+      @media print {
+        body {
+          background: white;
+          color: black;
+        }
+        
+        .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>MitraVerify requires JavaScript to function properly. Please enable JavaScript in your browser settings and reload the page.</p>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <!-- Initial loading state -->
+      <div class="initial-loading">
+        <div style="text-align: center;">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Loading MitraVerify...</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+{
+  "manifest_version": 3,
+  "name": "MitraVerify - Misinformation Detection",
+  "version": "1.0.0",
+  "description": "Real-time misinformation detection for social media and news sites. Verify content instantly while browsing.",
+  
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "background",
+    "contextMenus",
+    "notifications",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "https://mitraverify.vercel.app/*",
+    "https://localhost:5000/*",
+    "https://facebook.com/*",
+    "https://www.facebook.com/*",
+    "https://twitter.com/*",
+    "https://www.twitter.com/*",
+    "https://x.com/*",
+    "https://www.x.com/*",
+    "https://instagram.com/*",
+    "https://www.instagram.com/*",
+    "https://youtube.com/*",
+    "https://www.youtube.com/*",
+    "https://whatsapp.com/*",
+    "https://web.whatsapp.com/*",
+    "https://timesofindia.indiatimes.com/*",
+    "https://www.hindustantimes.com/*",
+    "https://indianexpress.com/*",
+    "https://www.thehindu.com/*",
+    "https://zeenews.india.com/*",
+    "https://www.ndtv.com/*",
+    "https://www.news18.com/*",
+    "https://www.republicworld.com/*",
+    "https://www.aajtak.in/*",
+    "https://www.abplive.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://facebook.com/*",
+        "https://www.facebook.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*",
+        "https://x.com/*",
+        "https://www.x.com/*",
+        "https://instagram.com/*",
+        "https://www.instagram.com/*",
+        "https://youtube.com/*",
+        "https://www.youtube.com/*",
+        "https://whatsapp.com/*",
+        "https://web.whatsapp.com/*",
+        "*://*.com/news/*",
+        "*://*.in/news/*",
+        "*://*.org/news/*"
+      ],
+      "js": [
+        "lib/utils.js",
+        "content-scripts/content.js",
+        "content-scripts/social-media.js",
+        "content-scripts/news-sites.js"
+      ],
+      "css": [
+        "styles/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "MitraVerify - Verify Content",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  
+  "options_page": "options/options.html",
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*.png",
+        "styles/*.css",
+        "popup/*.html",
+        "assets/*.svg"
+      ],
+      "matches": [
+        "https://facebook.com/*",
+        "https://www.facebook.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*",
+        "https://x.com/*",
+        "https://www.x.com/*",
+        "https://instagram.com/*",
+        "https://www.instagram.com/*",
+        "https://youtube.com/*",
+        "https://www.youtube.com/*",
+        "https://whatsapp.com/*",
+        "https://web.whatsapp.com/*"
+      ]
+    }
+  ],
+  
+  "commands": {
+    "verify_selected_text": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+V",
+        "mac": "Command+Shift+V"
+      },
+      "description": "Verify selected text"
+    },
+    "toggle_auto_scan": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Toggle automatic content scanning"
+    },
+    "open_full_report": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+R",
+        "mac": "Command+Shift+R"
+      },
+      "description": "Open detailed verification report"
+    }
+  },
+  
+  "author": "MitraVerify Team",
+  "homepage_url": "https://mitraverify.vercel.app",
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://mitraverify.vercel.app https://localhost:5000;"
+  },
+  
+  "externally_connectable": {
+    "matches": [
+      "https://mitraverify.vercel.app/*"
+    ]
+  }
+}
